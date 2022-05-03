@@ -20,7 +20,7 @@
              <div>具名插槽</div>
          </template>
      </sonT>
-
+    <el-button type="primary">element</el-button>
  </div>
 </template>
 <script setup>
