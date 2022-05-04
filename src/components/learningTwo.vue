@@ -20,10 +20,34 @@
              <div>具名插槽</div>
          </template>
      </sonT>
-    <el-button type="primary">element</el-button>
+    
+    <!-- //异步组件要由suspense包裹 -->
+    <!-- <Suspense>
+        <template #default>
+             async是带有异步请求的组件
+             <async></async>
+        </template>
+        <template #fallback>
+            加载中
+        </template>
+    </Suspense> -->
+
+    <el-button @click="addBtn(2)">{{miNum}}</el-button>
  </div>
 </template>
 <script setup>
+
+        //依赖注入
+        let proIn = ref(0)
+        provide('sendDate',proIn)
+        provide('sendDate2',proIn)
+
+        //MIXIN混入
+        import {testMixin} from '../mixins/mixin' 
+        let { miNum, addBtn} = testMixin()
+
+        // 异步组件  可以用于实现分包处理
+        // const async = defineAsyncComponent(()=>import(''))
         import son from './sonComponents.vue'
         import sonT from './sonComponentsT.vue'
         //路由变化 -路由跳转、接收方式（useRoute,useRouter）和路由模式
