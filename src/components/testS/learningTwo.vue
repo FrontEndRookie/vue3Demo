@@ -43,7 +43,7 @@
         provide('sendDate2',proIn)
 
         //MIXIN混入
-        import {testMixin} from '../mixins/mixin' 
+        import {testMixin} from '../../mixins/mixin' 
         let { miNum, addBtn} = testMixin()
 
         // 异步组件  可以用于实现分包处理

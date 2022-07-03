@@ -13,7 +13,7 @@
     </div>
 </template>
 <script setup>
-    import mitter from '../plugins/bus'
+    import mitter from '../../plugins/bus'
     let mes = ref('')
     mitter.on('busSend',(val)=>{
         console.log(val)

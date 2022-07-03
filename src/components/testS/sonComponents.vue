@@ -8,13 +8,13 @@
         <!-- <el-button @click="testVuexPersist">{{getStoreDate}}</el-button> -->
 
         <!-- pinia -->
-        <el-button @click="countZero">{{count}}</el-button>
-        <!-- <el-button @click="store.$reset">{{count}}</el-button> -->
+        <el-button @click="countZero">{{fontS}}</el-button>
+        <!-- <el-button @click="store.$reset">{{fontS}}</el-button> -->
     </div>
 </template>
 <script setup>
     import { inject } from "@vue/runtime-core"
-import mitter from "../plugins/bus"
+import mitter from "../../plugins/bus"
     // import { defineProps } from 'vue'
     defineProps({
         msg:{
@@ -40,7 +40,7 @@ import mitter from "../plugins/bus"
     }
 
     //
-    console.log(inject('sendDate').value)
+    // console.log(inject('sendDate').value)
 
     //vuex
     // import { useStore } from 'vuex'
@@ -53,7 +53,7 @@ import mitter from "../plugins/bus"
     // let getStoreDate = computed(()=>testStore.state.user.moduleStateOne)
 
     //pinia
-    import { useState } from '../store'
+    import { useState } from '../../store'
 
     //模块化只需新增js文件 ,storeName为newName.js export的变量名字
     // 如 import { storeName } from '../store/newName.js'
@@ -62,14 +62,12 @@ import mitter from "../plugins/bus"
     //cnpm i pinia-plugin-persist --save
     import { storeToRefs } from 'pinia'
     const store = useState()
-    let { count, countPlus } = storeToRefs(store)
-    console.log(count)
+    let { fontS, countPlus } = storeToRefs(store)
     //修改方法1 
-    count.value = 100
-    console.log(count)
+    fontS.value = 100
     //修改方法2
     store.$patch(state=>{
-        state.count = 200
+        state.fontS = 200
     })
     console.log(countPlus)
     let countZero = ()=>{

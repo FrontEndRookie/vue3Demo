@@ -1,41 +1,20 @@
-// import { createStore } from "vuex";
-// import user from './modules/user'
-// import persistedState from 'vuex-persistedstate'
-
-// export default createStore({
-//     state:{
-//         stateOne:1
-//     },
-//     getters:{},
-//     mutations:{
-//         setStateOne(state,val){
-//             state.stateOne = val
-//         }
-//     },
-//     actions:{},
-//     modules:{ user },
-//     plugins:[persistedState({
-//         key:'userVuexDate',
-//         paths:['user']
-//     })]
-// })
 
 //pinia
 import { defineStore } from 'pinia'
-export const useState = defineStore('useState',{
+ const useState = defineStore('main',{/*  */
     state:()=>{
         return {
-            count:0
+            text:100
         }
     },
     getters:{
         countPlus(){
-            return this.count + 100
+            return this.text + 100
         }
     },
     actions:{
         countZero(){
-            this.count = 0
+            this.fontS = 0
         }
     },
 
@@ -48,3 +27,4 @@ export const useState = defineStore('useState',{
         }]
     }
 })
+export { useState }
